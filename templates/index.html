@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Любиш мене?</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        button { font-size: 20px; margin: 10px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>Ти мене любиш?</h1>
+    <button onclick="answer('yes')">Так ❤️</button>
+    <button onclick="answer('no')">Ні 💔</button>
+
+    <script>
+        function answer(choice) {
+            if (choice === 'yes') {
+                alert("Я теж тебе люблю! 💕");
+            } else {
+                alert("Шкода... 😢");
+            }
+        }
+    </script>
+</body>
+</html>
