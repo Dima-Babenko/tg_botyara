@@ -1,22 +1,28 @@
 import logging
-import os
+import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
-from aiogram.utils import executor
+from aiogram.filters import Command
+from aiogram.types import Message
 
-TOKEN = "YOUR_BOT_TOKEN"
-WEB_APP_URL = "https://your-web-app-url.com"  # Замініть на свій хостинг
+TOKEN = "YOUR_BOT_TOKEN"  # Замініть на свій токен
+WEB_APP_URL = "https://dima-babenko.github.io/tg_botyara/"  # Замініть на свій сайт
 
 logging.basicConfig(level=logging.INFO)
-bot = Bot(token=TOKEN)
-dp = Dispatcher(bot)
 
-@dp.message_handler(commands=["start"])
-async def start_command(message: types.Message):
-    keyboard = InlineKeyboardMarkup().add(
-        InlineKeyboardButton("Відкрити", web_app=WebAppInfo(url=WEB_APP_URL))
-    )
-    await message.answer("Натисни, щоб відкрити застосунок:", reply_markup=keyboard)
+bot = Bot(token=TOKEN)
+dp = Dispatcher()
+
+@dp.message(Command("start"))
+async def start_command(message: Message):
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="Відкрити", web_app=WebAppInfo(url=WEB_APP_URL))]
+    ])
+    await message.answer("Натисни кнопку, щоб відкрити застосунок:", reply_markup=keyboard)
+
+async def main():
+    await bot.delete_webhook(drop_pending_updates=True)  # Видаляє невідправлені повідомлення
+    await dp.start_polling(bot)  # Запуск бота
 
 if __name__ == "__main__":
-    executor.start_polling(dp, skip_updates=True)
+    asyncio.run(main())
