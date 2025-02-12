@@ -5,8 +5,8 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, WebAppInfo
 from aiogram.filters import Command
 from aiogram.types import Message
 
-TOKEN = "YOUR_BOT_TOKEN"  # Замініть на свій токен
-WEB_APP_URL = "https://dima-babenko.github.io/tg_botyara/"  # Замініть на свій сайт
+TOKEN = "7916345622:AAHPfQLpnAbjbGMy8McaVLh1mXZ_RGk_yJs"
+WEB_APP_URL = "https://dima-babenko.github.io/tg_botyara/"
 
 logging.basicConfig(level=logging.INFO)
 
@@ -21,8 +21,8 @@ async def start_command(message: Message):
     await message.answer("Натисни кнопку, щоб відкрити застосунок:", reply_markup=keyboard)
 
 async def main():
-    await bot.delete_webhook(drop_pending_updates=True)  # Видаляє невідправлені повідомлення
-    await dp.start_polling(bot)  # Запуск бота
+    await bot.delete_webhook(drop_pending_updates=True)
+    await dp.start_polling(bot)
 
 if __name__ == "__main__":
     asyncio.run(main())

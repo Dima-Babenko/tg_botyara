@@ -5,21 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Любиш мене?</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        button { font-size: 20px; margin: 10px; padding: 10px 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1>Ти мене любиш?</h1>
-    <button onclick="answer('yes')">Так ❤️</button>
-    <button onclick="answer('no')">Ні 💔</button>
+    <h1>Ти мене любиш? ❤️</h1>
+    <div class="buttons">
+        <button onclick="answer(true)">Так</button>
+        <button onclick="answer(false)">Ні</button>
+    </div>
 
     <script>
-        function answer(choice) {
-            if (choice === 'yes') {
-                alert("Я теж тебе люблю! 💕");
+        function answer(love) {
+            if (love) {
+                alert("Я теж тебе люблю! ❤️");
             } else {
-                alert("Шкода... 😢");
+                alert("Ну і дарма... 😢");
             }
         }
     </script>
