@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram WebApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #2b7bbe;
+        }
+        .question {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>tg_botyara</h1>
+    <p class="question">Ти мене любиш?</p>
+    <div class="buttons">
+        <button class="yes" onclick="answer(true)">✅ Так</button>
+        <button class="no" onclick="answer(false)">❌ Ні</button>
+    </div>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        function answer(love) {
+            if (love) {
+                alert("❤️ Я теж тебе люблю!");
+            } else {
+                alert("💔 Сумно...");
+            }
+            tg.close(); // Закриває WebApp після вибору
+        }
+    </script>
+</body>
+</html>
