@@ -8,37 +8,18 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 24px;
-        }
-        .buttons {
-            margin-top: 20px;
+            padding: 50px;
         }
         button {
-            font-size: 18px;
-            padding: 10px 20px;
+            font-size: 20px;
             margin: 10px;
-            cursor: pointer;
+            padding: 10px 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Ти мене любиш? ❤️</h1>
-    <div class="buttons">
-        <button onclick="answer(true)">Так</button>
-        <button onclick="answer(false)">Ні</button>
-    </div>
-
-    <script>
-        function answer(love) {
-            if (love) {
-                alert("Я теж тебе люблю! ❤️");
-            } else {
-                alert("Ну і дарма... 😢");
-            }
-        }
-    </script>
+    <h1>Ти мене любиш?</h1>
+    <button onclick="alert('Я теж тебе люблю! ❤️')">Так</button>
+    <button onclick="alert('Ой, невже? 😢')">Ні</button>
 </body>
 </html>
