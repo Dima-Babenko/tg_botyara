@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Любиш мене?</title>
+    <title>Telegram WebApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
         }
-        button {
-            font-size: 20px;
-            margin: 10px;
-            padding: 10px 20px;
-        }
     </style>
 </head>
 <body>
-    <h1>Ти мене любиш?</h1>
-    <button onclick="alert('Я теж тебе люблю! ❤️')">Так</button>
-    <button onclick="alert('Ой, невже? 😢')">Ні</button>
+    <h1>Привіт!</h1>
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Робить WebApp на весь екран
+    </script>
 </body>
 </html>
