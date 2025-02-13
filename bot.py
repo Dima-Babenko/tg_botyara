@@ -3,8 +3,8 @@ import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-TOKEN = "7916345622:AAHPfQLpnAbjbGMy8McaVLh1mXZ_RGk_yJs"  # Встав свій токен від BotFather
-WEBAPP_URL = "https://dima-babenko.github.io/tg_botyara/"
+TOKEN = "ТВОЙ_ТОКЕН"  # Замініть на ваш реальний токен
+WEBAPP_URL = "https://твій-юзернейм.github.io/tg_webapp_project/webapp/"
 
 logging.basicConfig(level=logging.INFO)
 
@@ -15,7 +15,7 @@ dp = Dispatcher()
 async def start(message: types.Message):
     if message.text == "/start":
         keyboard = InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="🔗 Відкрити", web_app=types.WebAppInfo(url=WEBAPP_URL))]
+            [InlineKeyboardButton(text="🔗 Відкрити WebApp", web_app=types.WebAppInfo(url=WEBAPP_URL))]
         ])
         
         await message.answer("Натисни кнопку, щоб відкрити застосунок:", reply_markup=keyboard)
