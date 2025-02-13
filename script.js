@@ -4,7 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "Ще раз тикни",
         "Ну ще трошки",
         "Оооо, ось воно!",
-        "Люблю тебе ❤️"
+        "Люблю тебе ❤️",
+        "Ти найкращий(а) 😊",
+        "Обіймаю тебе 🤗",
+        "Моє серденько твоє ❤️",
+        "Разом назавжди 💞",
+        "Ти мій всесвіт 🌍",
+        "Просто знай: я тебе люблю 🥰"
     ];
 
     let currentMessageIndex = 0;
@@ -14,10 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentMessageIndex < messages.length - 1) {
             currentMessageIndex++;
             messageElement.textContent = messages[currentMessageIndex];
+
+            // Додаємо велике анімоване сердечко на останньому кроці
+            if (currentMessageIndex === messages.length - 1) {
+                createBigHeart();
+            }
         }
     });
 
-    // Додаємо ефект сердечок
+    // Функція створення маленьких сердечок
     function createHeart() {
         const heart = document.createElement("div");
         heart.classList.add("heart");
@@ -28,6 +39,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(() => {
             heart.remove();
+        }, 4000);
+    }
+
+    // Функція створення великого анімованого сердечка в кінці
+    function createBigHeart() {
+        const bigHeart = document.createElement("div");
+        bigHeart.classList.add("big-heart");
+        bigHeart.innerHTML = "❤️";
+        document.body.appendChild(bigHeart);
+
+        setTimeout(() => {
+            bigHeart.remove();
         }, 4000);
     }
 
