@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
             currentMessageIndex++;
             messageElement.textContent = messages[currentMessageIndex];
         } else {
-            // Коли досягли останнього тексту - додаємо велике сердечко
+            // Очищаємо екран і додаємо велике сердечко
+            messageElement.style.display = "none"; // Прибираємо текст
             showBigHeart();
         }
     });
@@ -54,5 +55,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.addEventListener("click", createHeart);
 
     const tg = window.Telegram.WebApp;
-    tg.expand(); 
+    tg.expand();
 });
