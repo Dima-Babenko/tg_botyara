@@ -11,30 +11,18 @@ body {
 
 .message {
     position: absolute;
-    font-size: 36px; /* Збільшений розмір */
+    font-size: 40px; /* Збільшений текст */
     color: #d32f2f;
     font-weight: bold;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Маленькі сердечка */
 .heart {
     position: absolute;
     color: red;
     font-size: 24px;
     opacity: 0.7;
     animation: rise 4s linear infinite;
-}
-
-/* Велике сердечко в кінці */
-.big-heart {
-    position: absolute;
-    font-size: 150px; /* Дуже велике сердечко */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: heartBeat 1.5s infinite ease-in-out;
 }
 
 @keyframes rise {
@@ -46,6 +34,22 @@ body {
         transform: translateY(-10vh) scale(1.2);
         opacity: 0;
     }
+}
+
+/* Велике сердечко */
+.big-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px; /* Дуже велике сердечко */
+    opacity: 0;
+    animation: appear 1.5s forwards, heartBeat 1.5s infinite ease-in-out;
+}
+
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes heartBeat {

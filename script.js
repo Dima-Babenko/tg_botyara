@@ -20,15 +20,23 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentMessageIndex < messages.length - 1) {
             currentMessageIndex++;
             messageElement.textContent = messages[currentMessageIndex];
-
-            // Додаємо велике анімоване сердечко на останньому кроці
-            if (currentMessageIndex === messages.length - 1) {
-                createBigHeart();
-            }
+        } else {
+            // Коли досягли останнього тексту - додаємо велике сердечко
+            showBigHeart();
         }
     });
 
-    // Функція створення маленьких сердечок
+    function showBigHeart() {
+        // Перевіряємо, чи сердечко вже є, щоб не додавати повторно
+        if (!document.querySelector(".big-heart")) {
+            const heart = document.createElement("div");
+            heart.classList.add("big-heart");
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+        }
+    }
+
+    // Додаємо ефект маленьких сердечок
     function createHeart() {
         const heart = document.createElement("div");
         heart.classList.add("heart");
@@ -42,22 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 4000);
     }
 
-    // Функція створення великого анімованого сердечка в кінці
-    function createBigHeart() {
-        const bigHeart = document.createElement("div");
-        bigHeart.classList.add("big-heart");
-        bigHeart.innerHTML = "❤️";
-        document.body.appendChild(bigHeart);
-
-        setTimeout(() => {
-            bigHeart.remove();
-        }, 4000);
-    }
-
     setInterval(createHeart, 300);
     document.body.addEventListener("click", createHeart);
 
-    // Інтеграція з Telegram WebApp
     const tg = window.Telegram.WebApp;
-    tg.expand(); // Розширюємо WebApp на весь екран
+    tg.expand(); 
 });
