@@ -3,8 +3,8 @@ import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-TOKEN = "ТВОЙ_ТОКЕН"  # Замініть на ваш реальний токен
-WEBAPP_URL = "https://твій-юзернейм.github.io/tg_webapp_project/webapp/"
+TOKEN = "7916345622:AAHPfQLpnAbjbGMy8McaVLh1mXZ_RGk_yJs"
+WEBAPP_URL = "https://dima-babenko.github.io/tg_botyara/"
 
 logging.basicConfig(level=logging.INFO)
 
