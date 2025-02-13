@@ -6,13 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
         "Оооо, ось воно!",
         "Люблю тебе ❤️"
     ];
-    
+
     let currentMessageIndex = 0;
-    const messageElement = document.querySelector(".message"); // Використовуємо клас
+    const messageElement = document.querySelector(".message");
 
     document.addEventListener("click", function () {
-        currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-        messageElement.textContent = messages[currentMessageIndex];
+        if (currentMessageIndex < messages.length - 1) {
+            currentMessageIndex++;
+            messageElement.textContent = messages[currentMessageIndex];
+        }
     });
 
     // Додаємо ефект сердечок
