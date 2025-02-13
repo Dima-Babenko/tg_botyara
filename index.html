@@ -11,24 +11,5 @@
     <div class="message">нажми на екран</div>
     
     <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const messages = [
-                "Тикни",
-                "Ще раз тикни",
-                "Ну ще трошки",
-                "Оооо, ось воно!",
-                "Люблю тебе ❤️"
-            ];
-            
-            let currentMessageIndex = 0;
-            const messageElement = document.getElementById("message");
-        
-            document.addEventListener("click", function () {
-                currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-                messageElement.textContent = messages[currentMessageIndex];
-            });
-        });
-        </script>
 </body>
 </html>
